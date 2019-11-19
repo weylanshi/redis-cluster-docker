@@ -1,0 +1,32 @@
+version: '2'
+services:
+  slave1:
+    build: ./slave1
+    ports:
+      - 6371:6371
+      - 16371:16371
+  slave2:
+    build: ./slave2
+    ports:
+      - 6372:6372
+      - 16372:16372
+  slave3:
+    build: ./slave3
+    ports:
+      - 6373:6373
+      - 16373:16373
+  slave4:
+    build: ./slave4
+    ports:
+      - 6374:6374
+      - 16374:16374
+  slave5:
+    build: ./slave5
+    ports:
+      - 6375:6375
+      - 16375:16375
+  slave6:
+    build: ./slave6
+    ports:
+      - 6376:6376
+      - 16376:16376
