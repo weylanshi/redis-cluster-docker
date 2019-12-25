@@ -5,28 +5,52 @@ services:
     ports:
       - 6371:6371
       - 16371:16371
+    networks: 
+      redis-cluster-net:
+        ipv4_address: 172.16.238.11
   slave2:
     build: ./slave2
     ports:
       - 6372:6372
       - 16372:16372
+    networks: 
+      redis-cluster-net:
+        ipv4_address: 172.16.238.12
   slave3:
     build: ./slave3
     ports:
       - 6373:6373
       - 16373:16373
+    networks: 
+      redis-cluster-net:
+        ipv4_address: 172.16.238.13
   slave4:
     build: ./slave4
     ports:
       - 6374:6374
       - 16374:16374
+    networks: 
+      redis-cluster-net:
+        ipv4_address: 172.16.238.14
   slave5:
     build: ./slave5
     ports:
       - 6375:6375
       - 16375:16375
+    networks: 
+      redis-cluster-net:
+        ipv4_address: 172.16.238.15
   slave6:
     build: ./slave6
     ports:
       - 6376:6376
       - 16376:16376
+    networks: 
+      redis-cluster-net:
+        ipv4_address: 172.16.238.16
+networks: 
+  # 创建集群网路，在容器之间通信
+  redis-cluster-net:
+    ipam: 
+      config: 
+        - subnet: 172.16.238.0/24
